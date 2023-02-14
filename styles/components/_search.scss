@@ -1,0 +1,213 @@
+.search {
+    @include widthHeight(90%, 800px, 40vh);
+    @include flex(center, column, 20px);
+    @include customBorder;
+    background-color: #fff;
+    z-index: 1;
+}
+
+
+.search-open {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    border-bottom: 0 !important;
+}
+
+.search-cnt {
+    @include widthHeight(100%, unset, auto);
+    @include flex(center, column, unset);
+}
+
+header {
+    @include flex(center, row, 0.825rem);
+    @include headerH1Img(3.25rem, 3.25rem);
+    margin-bottom: 0.5rem;
+}
+
+form {
+    @include widthHeight(100%, unset, auto);
+    @include flex(center, column, 1.5rem);
+    padding: 1.125rem 1.125rem 0;
+}
+
+.wrapper {
+    @include widthHeight(100%, 600px, auto);
+    display: block;
+    position: relative;
+
+    input {
+        @include widthHeight(100%, unset, auto);
+        padding: 0.7rem 1.5rem;
+        background: #eee;
+        border: unset;
+        border-radius: 25px;
+
+        &:focus {
+            outline: none !important;
+            border: 1px solid $gloobe-blue;
+        }
+    }
+
+    .input-onmatching {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .minus-icon {
+        display: none;
+        position: absolute;
+        right: 1.125rem;
+        top: 0.7rem;
+        cursor: pointer;
+    }
+
+    .show-minus-icon {
+        display: inline-block;
+    }
+}
+
+.match-list {
+    @include widthHeight(100%, unset, auto);
+    position: absolute;
+    margin: unset;
+    padding-bottom: 100px;
+    list-style: none;
+
+    li {
+        padding: 0.275rem 0.55rem;
+        background: #fff;
+        border: 1px solid #ddd;
+        border-top: unset;
+        transition: 0.2s ease-out;
+
+        &:last-child {
+            border-bottom-left-radius: 25px;
+            border-bottom-right-radius: 25px;
+        }
+
+        &:hover {
+            border: 1px solid $gloobe-blue;
+            border-radius: 25px;
+            scale: 105%;
+        }
+
+        button {
+            @include widthHeight(100%, unset, auto);
+            @include flex(flex-start, row, 1rem);
+            padding: 0.5rem;
+            border: unset;
+            background: unset;
+
+            img {
+                @include widthHeight(1.5rem, unset, 1rem);
+            }
+
+            .info-div {
+                @include flex(flex-start, row, 1rem);
+            }
+
+            p {
+                font-size: 0.85rem;
+            }
+
+            .subregion {
+                color: $gloobe-blue;
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+.btn-submit {
+    @include button(0.5rem, 2.5rem, 0.825rem);
+}
+
+footer {
+    @include flex(flex-end, row, unset);
+    width: 90%;
+
+    a {
+        @include link(true, 0.75rem);
+    }
+}
+
+
+
+//------------------- MEDIA QUERIES -------------------//
+
+
+
+@include maxi {
+    .search {
+        @include widthHeight(90%, 800px, 30vh);
+    }
+}
+
+
+@include md {
+    header {
+        @include headerH1Img(2.5rem, 2.5rem);
+    }
+
+    form {
+        padding: 1.125rem 1rem;
+    }
+
+    .match-list {
+        li {
+            button {
+                padding: 0; 
+
+                img {
+                    @include widthHeight(2rem, unset, 1.5rem); 
+                }
+
+                .info-div {
+                    @include flex(flex-start, column, 0.125rem); 
+                    align-items: start !important; 
+                }
+
+                .subregion {
+                    font-size: 0.725rem; 
+                }
+            }
+        }
+    }
+
+}
+
+
+@include sm {
+    header {
+        @include headerH1Img(2.25rem, 2.25rem);
+    }
+
+    .wrapper {
+        input {
+            font-size: 0.9rem;
+        }
+    }
+
+    .btn-submit {
+        @include button(0.375rem, 2.5rem, 0.9rem);
+    }
+
+    footer {
+        @include flex(center, row, unset);
+    }
+}
+
+
+@include xs {
+    header {
+        @include headerH1Img(2rem, 2rem);
+    }
+
+    .btn-submit {
+        @include button(0.275rem, 2.25rem, 0.825rem);
+    }
+
+    footer {
+        @include flex(center, row, unset);
+    }
+}

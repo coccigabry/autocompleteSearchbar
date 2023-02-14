@@ -1,0 +1,38 @@
+* {
+    @include reset;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+}
+
+body {
+    @include widthHeight(100vw, unset, 100vh);
+    @include flex(center, column, unset);
+    background: url('/assets/bg.jpg') repeat center / cover;
+    min-width: 400px;
+    overflow-x: hidden;
+}
+
+label {
+    display: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+.container {
+    @include widthHeight(90%, unset, 90%);
+    @include flex(center, column, unset);
+}
+
+
+
+//------------------- MEDIA QUERIES -------------------//
+
+
+
+@include md {
+    body {
+        background: url('/assets/bg_mobile.jpg') repeat center / cover;
+    }
+}

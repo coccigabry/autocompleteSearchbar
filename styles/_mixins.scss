@@ -1,0 +1,75 @@
+@mixin reset() {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+@mixin widthHeight($width, $maxWidth, $height) {
+    width: $width;
+    max-width: $maxWidth;
+    height: $height;
+}
+
+
+@mixin flex($justify, $direction, $gap) {
+    display: flex;
+    align-items: center;
+    justify-content: $justify;
+    flex-direction: $direction;
+    gap: $gap;
+}
+
+@mixin headerH1Img($fontSize, $imgWidth) {
+    h1 {
+        font-size: $fontSize;
+    }
+
+    img {
+        width: $imgWidth;
+    }
+}
+
+
+@mixin button($paddUpDown, $paddLeftRight, $fontSize) {
+    border: unset;
+    border-radius: 25px;
+    padding: $paddUpDown $paddLeftRight;
+    background-color: $gloobe-blue;
+    border: 2px solid $gloobe-blue;
+    color: #fff;
+    font-size: $fontSize;
+    transition: .5s ease;
+
+    &:hover {
+        background-color: #fff;
+        border: 2px solid $gloobe-blue;
+        color: $gloobe-red;
+    }
+}
+
+
+@mixin customBorder() {
+    border: 1px solid $gloobe-blue;
+    border-radius: 25px;
+}
+
+
+@mixin link($credit, $fontSize) {
+    @if $credit {
+        text-decoration: none;
+        color: $gloobe-red;
+        font-size: $fontSize;
+    }
+
+    @else {
+        text-decoration: none;
+        color: $gloobe-blue;
+        font-size: $fontSize;
+    }
+}
+
+
+
+
+

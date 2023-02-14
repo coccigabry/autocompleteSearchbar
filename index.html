@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="shortcut icon" href="assets/favicon.png" type="image/png">
+    <title>Glooble</title>
+</head>
+
+<body>
+    <main class="container">
+        <div id='search' class="search">
+            <div class="search-cnt">
+                <header>
+                    <h1>Glooble</h1>
+                    <img src="/assets/logo.png" alt="glooble logo" />
+                </header>
+
+                <form autocomplete="off" aria-labelledby="wrapper">
+                    <div id='wrapper' class="wrapper">
+                        <label for="search-bar" aria-hidden="true">enter your search criteria here</label>
+                        <input type="text" placeholder="Anywhere..." id="search-bar"
+                            aria-label="Your search criteria">
+                        <span id="clean-searchbar" class="minus-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="20"
+                                height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <line x1="18" y1="6" x2="6" y2="18" />
+                                <line x1="6" y1="6" x2="18" y2="18" />
+                            </svg>
+                        </span>
+                    </div>
+                    <button type="submit" class="btn-submit" aria-label="search">Go!</button>
+                </form>
+
+                <footer>
+                    <a href="https://coccigabry.github.io/cocciweblab/" target="_blank">Powered by Cocci</a>
+                </footer>
+            </div>
+        </div>
+
+        <div id="alert" class="alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            Place yet to be discovered. 
+            <br>
+            Please try in a few years. 
+        </div>
+        
+        <div id="result" class="result">
+            <div id="result-cnt" class="result-cnt">
+                <div class="result-data">
+                    <div class="img-col">
+                        <img id='country-img' src="" alt="country-flag" />
+                        <a id='country-map-link' href="" target="_blank">View on map</a>
+                    </div>
+                    <div class="infos-col">
+                        <p id='country-name' class="title"></p>
+                        <p id='country-region' class="subtitle"></p>
+                        <p id='country-capital'></p>
+                        <p id='country-area'></p>
+                        <p id='country-population'></p>
+                        <p id='country-language'></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/index.js"></script>
+</body>
+
+</html>
